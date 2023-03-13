@@ -40,3 +40,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 "# amazon_v2.0-front" 
 "# amazon_v2.0-front" 
 "# amazon_v2.0-front" 
+"# amazon_v2.0-front" 
