@@ -1,4 +1,4 @@
-export interface IReview {
+export interface ICategory {
 	id: number
 	name: string
 	slug: string

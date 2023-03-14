@@ -1,12 +1,13 @@
 import {instance} from "@/api/api.interceptor";
-import {IReview} from "@/types/category.interface";
+import {ICategory} from "@/types/category.interface";
+
 
 const CATEGORIES = 'categories'
 
-export const CategoryService = {
+export const UserService = {
 
   async getAll() {
-    return await instance<IReview[]>({
+    return await instance<ICategory[]>({
       url: CATEGORIES,
       method: 'GET',
     })
@@ -14,14 +15,14 @@ export const CategoryService = {
 
 
   async create() {
-    return instance<IReview>({
+    return instance<ICategory>({
       url: CATEGORIES,
       method: "POST"
     })
   },
 
   async update(id: string | number, name: string ) {
-    return instance<IReview>({
+    return instance<ICategory>({
       url: `${CATEGORIES}/${id}`,
       method: "PUT",
       data: {name}
@@ -29,7 +30,7 @@ export const CategoryService = {
   },
 
   async delete(id: string | number) {
-    return instance<IReview>({
+    return instance<ICategory>({
       url: `${CATEGORIES}/${id}`,
       method: "DELETE",
     })
