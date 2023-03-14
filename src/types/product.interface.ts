@@ -1,4 +1,4 @@
-import { ICategory } from './category.interface'
+import { IReview } from './category.interface'
 import { IReview } from './review.interface'
 
 export interface IProduct {
@@ -10,7 +10,7 @@ export interface IProduct {
 	reviews: IReview[]
 	images: string[]
 	createdAt: string
-	category: ICategory
+	category: IReview
 }
 
 export interface IProductDetails {
