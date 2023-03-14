@@ -10,7 +10,7 @@ type TypeData = {
 export const ReviewService = {
 
   async getAll() {
-    return await instance<IReview[]>({
+    return instance<IReview[]>({
       url: REVIEWS,
       method: 'GET',
     })
