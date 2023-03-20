@@ -1,5 +1,5 @@
 import {instance} from "@/api/api.interceptor";
-import {IUser} from "@/types/user.interface";
+import {IFullUser, IUser} from "@/types/user.interface";
 
 type TypeData = {
   email: string
@@ -14,7 +14,7 @@ const USERS = 'users'
 export const UserService = {
 
   async getProfile() {
-    return instance<IUser[]>({
+    return instance<IFullUser>({
       url: `${USERS}/profile`,
       method: 'GET',
     })

@@ -1,5 +1,6 @@
 
 import { IProduct } from './product.interface'
+import {IOrder} from "@/types/order.interfact";
 
 export interface IUser {
 	id: number
@@ -11,5 +12,5 @@ export interface IUser {
 
 export interface IFullUser extends IUser {
 	favorites: IProduct[]
-	// orders: IOrder[]
+	orders: IOrder[]
 }
