@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { errorCatch } from '@/api/api.helper'
 
 import { IAuthResponse, IEmailPassword } from './user.interface'
-import { removeTokensFromStorage } from '@/services/auth/auth.helper'
+import { removeFromStorage } from '@/services/auth/auth.helper'
 import { AuthService } from '@/services/auth/auth.service'
 
 /* register */
@@ -34,7 +34,7 @@ export const login = createAsyncThunk<IAuthResponse, IEmailPassword>(
 
 /* logout */
 export const logout = createAsyncThunk('auth/logout', async () => {
-	removeTokensFromStorage()
+	removeFromStorage()
 })
 
 /* checkAuth */
