@@ -2,7 +2,7 @@ import {FC} from 'react';
 import {IProduct} from "@/types/product.interface";
 import {useActions} from "@/hooks/useActions";
 import {useCart} from "@/hooks/useCart";
-import {RiShoppingCartFill, RiShoppingCartLine} from "react-icons/all";
+import { RiShoppingCartFill, RiShoppingCartLine } from 'react-icons/ri'
 
 
 export const AddToCartButton: FC<{ product: IProduct }> = ({product}) => {

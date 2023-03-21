@@ -2,16 +2,14 @@ import {FC} from 'react';
 import Meta from "@/ui/Meta";
 import {Heading} from "@/ui/Heading";
 import {Catalog} from "@/ui/catalog/Catalog";
+import {TypePaginationProducts} from "@/types/product.interface";
 
-interface IHomeProps {
-}
-
-export const Home: FC<IHomeProps> = () => {
+export const Home: FC<TypePaginationProducts> = ({products, length}) => {
   return (
     <Meta title={'Home'}>
       <Heading>Hello world</Heading>
 
-      {/*<Catalog products={} />*/}
+      <Catalog products={products || []} />
     </Meta>
   );
 };

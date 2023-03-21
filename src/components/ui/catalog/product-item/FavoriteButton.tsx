@@ -1,14 +1,13 @@
 import {FC} from 'react';
-import {IProduct} from "@/types/product.interface";
-import {useActions} from "@/hooks/useActions";
-import {useCart} from "@/hooks/useCart";
-import {AiFillHeart, AiOutlineHeart} from "react-icons/all";
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import {useProfile} from "@/hooks/useProfile";
 import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {UserService} from "@/services/user.service";
 
 export const FavoriteButton: FC<{ productId: number }> = ({productId}) => {
   const {profile} = useProfile()
+
+  // if (!profile) return null
 
   const {invalidateQueries} = useQueryClient()
 
@@ -19,7 +18,7 @@ export const FavoriteButton: FC<{ productId: number }> = ({productId}) => {
     }
   })
 
-  const isExist = profile.favorites.some(favorite => favorite.id === productId)
+  const isExist = profile?.favorites.some(favorite => favorite.id === productId)
   return (
     <div>
       <button onClick={() => mutate()}>

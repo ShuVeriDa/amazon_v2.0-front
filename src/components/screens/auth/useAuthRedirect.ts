@@ -3,12 +3,11 @@ import {useRouter} from "next/router";
 import {useEffect} from "react";
 
 export const useAuthRedirect = () => {
-  const {user} = useAuth()
+  const { user } = useAuth()
 
-  const {replace} = useRouter()
+  const { replace } = useRouter()
 
   useEffect(() => {
-    if(user)
-      replace('/')
+    if (user) replace('/')
   }, [user])
 }

@@ -9,7 +9,11 @@ import Cookies from "js-cookie";
 
 const DynamicCheckRole = dynamic(() => import('./CheckRole'), {ssr: false})
 
-export const AuthProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({Component: {isOnlyUser}, children}) => {
+const AuthProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = (
+  {
+    Component: {isOnlyUser},
+    children
+  }) => {
   const {user} = useAuth()
   const {checkAuth, logout} = useActions()
 
@@ -23,12 +27,13 @@ export const AuthProvider: FC<PropsWithChildren<TypeComponentAuthFields>> = ({Co
   useEffect(() => {
     const refreshToken = Cookies.get('refreshToken')
     if (!refreshToken && user) logout()
-
   }, [pathname])
 
-  return isOnlyUser
-    ? (<DynamicCheckRole Component={{isOnlyUser}}>
-      {children}
-    </DynamicCheckRole>)
-    : <>{children}</>
-};
+  return isOnlyUser ? (
+    <DynamicCheckRole Component={{isOnlyUser}} children={children}/>
+  ) : (
+    <>{children}</>
+  )
+}
+
+export default AuthProvider

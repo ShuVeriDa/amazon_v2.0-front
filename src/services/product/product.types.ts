@@ -1,3 +1,5 @@
+import {IProduct} from "@/types/product.interface";
+
 export const PRODUCTS = 'products'
 
 export type TypeProductData = {
@@ -12,7 +14,7 @@ export type TypeProductDataFilters = {
   sort?: EnumProductSort
   search?: string
   page?: string | number
-  perPage?: string
+  perPage?: string | number
 }
 
 export enum EnumProductSort {
@@ -21,3 +23,4 @@ export enum EnumProductSort {
   NEWEST = 'newest',
   OLDEST= ' oldest'
 }
+
